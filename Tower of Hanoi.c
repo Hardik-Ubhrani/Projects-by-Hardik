@@ -1,1 +1,34 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[],"authorship_tag":"ABX9TyP7KUSb8nKduFOTFj/fTrcp"},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","execution_count":null,"metadata":{"id":"mFx2RTJOJ6kd"},"outputs":[],"source":["#include <stdio.h>\n","void hanoi_10566(int,int,int);\n","int disp(int,int);\n","void main()\n","{\n","    int ring,start,end;\n","    printf(\"Enter number of rings\");\n","    scanf(\"%d\",&ring);\n","    printf(\"Enter starting rod\");\n","    scanf(\"%d\",&start);\n","    printf(\"Enter destination rod\");\n","    scanf(\"%d\",&end);\n","    hanoi_10566(ring,start,end);\n","}\n","\n","\n","void hanoi_10566(int ring,int start,int end)\n","//ring: defines number of rings, start:defines the starting rod,end:defines the end rod\n","{\n","    if (ring == 1)\n","     disp(start,end);\n","    else {\n","        int other=6-start-end;\n","        hanoi_10566(ring-1,start,other);\n","        disp(start,end);\n","        hanoi_10566(ring-1,other,end);\n","    }\n","\n","\n","}\n","int disp(int frm,int to)\n","{\n","    printf(\"%d --> %d\\n\",frm,to);\n","}"]}]}
+#include <stdio.h>
+void hardik_hanoi_10566(int,int,int);
+int disp(int,int);
+void main()
+{
+    int ring,start,end;
+    printf("Enter number of rings");
+    scanf("%d",&ring);
+    printf("Enter starting rod");
+    scanf("%d",&start);
+    printf("Enter destination rod");
+    scanf("%d",&end);
+    hardik_hanoi_10566(ring,start,end);
+}
+
+
+void hardik_hanoi_10566(int ring,int start,int end)
+//ring: defines number of rings, start:defines the starting rod,end:defines the end rod
+{
+    if (ring == 1)
+     disp(start,end);
+    else {
+        int other=6-start-end;
+        hardik_hanoi_10566(ring-1,start,other);
+        disp(start,end);
+        hardik_hanoi_10566(ring-1,other,end);
+    }
+
+
+}
+int disp(int frm,int to)
+{
+    printf("%d --> %d\n",frm,to);
+}
